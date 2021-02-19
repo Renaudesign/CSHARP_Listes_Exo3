@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSHARP_Listes_Exo3
 {
@@ -18,16 +19,26 @@ namespace CSHARP_Listes_Exo3
             numbers.Add(666);
             numbers.Add(1789);
 
-            //pour chaque valeur du tableau, faire le cumul 
-            foreach(int value in numbers)
+            //pour chaque valeur du tableau, faire le cumul avec la méthode LINQ
+            result = numbers.Sum();
+            Console.WriteLine($"{result}");
+
+            string usedNumbers = String.Join(" + ", numbers);
+            Console.WriteLine(usedNumbers);
+
+            //pour chaque valeur du tableau, faire le cumul avec une boucle
+            /*foreach(int value in numbers)
             {
                 Console.WriteLine($"\n{result} + {value} =");
                 result += value;
                 Console.WriteLine(result);
             }
+            */
+
 
             //afficher le résultat du cumul de tous les nombres de la liste
-            Console.WriteLine("\nle résultat final est : " + result);
+            //Console.WriteLine("\nle résultat final est : " + result);
+
 
         }
     }
